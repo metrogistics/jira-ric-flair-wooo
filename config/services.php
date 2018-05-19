@@ -35,4 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'jira' => [
+        'api_token' => env('JIRA_TOKEN'),
+    ],
+
 ];

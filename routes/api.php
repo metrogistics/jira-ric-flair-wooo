@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/webhooks/ric-flair/{api_token}', function(Request $request, $api_token) {
 
-   if ($api_token == 'mgRgNQibyUbMReoNcTmJkDRrFzKNmMnsirJoCcyGr8GfufEf'){
+   if ($api_token == config('services.jira.api_token')){
 
        \Illuminate\Support\Facades\Log::info('GET REQUEST.');
 
@@ -39,7 +39,7 @@ Route::get('/webhooks/ric-flair/{api_token}', function(Request $request, $api_to
 
 Route::post('/webhooks/ric-flair/{api_token}', function(Request $request, $api_token) {
 
-    if ($api_token == 'mgRgNQibyUbMReoNcTmJkDRrFzKNmMnsirJoCcyGr8GfufEf'){
+    if ($api_token == config('services.jira.api_token')){
 
         \Illuminate\Support\Facades\Log::info('POST REQUEST.');
 
