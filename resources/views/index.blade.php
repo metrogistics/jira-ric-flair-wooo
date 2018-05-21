@@ -5,7 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>JIRA Notifications</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -59,37 +62,36 @@
                 text-transform: uppercase;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+            <div id="root" class="content">
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                <h1>JIRA Tasks Completed Today</h1>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <counter-component v-model="counter"></counter-component>
+
             </div>
         </div>
     </body>
 </html>
+
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
+
+<script>
+
+    new Vue({
+        el: "#root",
+        data: {
+            counter: 0,
+        },
+        methods: {
+            incrementCounter: function () {
+                this.counter += 1;
+            }
+        }
+    })
+
+</script>
