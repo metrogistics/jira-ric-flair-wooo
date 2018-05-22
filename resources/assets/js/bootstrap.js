@@ -2,6 +2,22 @@
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
 
+import Echo from "laravel-echo"
+
+window.Pusher = require('pusher-js');
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: '2a789d44a2449bb52ca0',
+    cluster: 'us2',
+    encrypted: true
+});
+
+window.Echo.private('jira-notifications')
+    .listen('JiraNotification', (e) => {
+        console.log(e);
+    });
+
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
