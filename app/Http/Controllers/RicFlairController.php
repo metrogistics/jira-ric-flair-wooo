@@ -62,13 +62,13 @@ class RicFlairController extends Controller
 
     public function getRandomSoundClip()
     {
-        $files = scandir(storage_path('audio-files'));
+        $files = scandir(public_path('audio-files'));
 
         $selected_index = rand(2, (count($files) - 1));
 
         $selected_file = $files[$selected_index];
 
-        $file_path = storage_path('audio-files/' . $selected_file);
+        $file_path = public_path('audio-files/' . $selected_file);
 
         return $file_path;
     }
