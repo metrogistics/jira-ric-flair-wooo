@@ -16,10 +16,11 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #5d6771;
+                color: #ed7800;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
+                font-size: 80px;
                 height: 100vh;
                 margin: 0;
             }
