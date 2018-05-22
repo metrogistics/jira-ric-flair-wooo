@@ -8,5 +8,7 @@ class Counter extends Model
 {
     protected $table = 'counter';
 
+    public $timestamps = false;
+
     protected $fillable = ['count'];
 }
