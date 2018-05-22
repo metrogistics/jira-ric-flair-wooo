@@ -13,10 +13,6 @@ class RicFlairController extends Controller
     {
         if ($api_token == config('services.jira.api_token')){
 
-            \Illuminate\Support\Facades\Log::info('POST REQUEST.');
-
-            \Illuminate\Support\Facades\Log::info('JIRA request input: ' . print_r($request->input(), true));
-
             // filter out JIRA notifications that are marking a task 'Done'
 
             $task_status_change = $request->input()['changelog']['items'][1]['toString'];
