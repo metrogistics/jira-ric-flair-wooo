@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Counter;
+use App\Events\JiraNotification;
 use Illuminate\Console\Command;
 
 class ResetCounter extends Command
@@ -44,6 +45,8 @@ class ResetCounter extends Command
             $counter->count = 0;
             $counter->save();
         }
+
+        event(new JiraNotification(0, ""));
 
         return;
     }

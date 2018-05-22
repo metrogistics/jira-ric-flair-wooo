@@ -63,5 +63,9 @@ window.Echo.channel('jira-notifications')
 
         var audio = document.getElementById('audio');
         audio.src = e.url;
-        audio.play();
+
+        if (audio.src !== ""){
+            audio.play();
+        }
+
     });
