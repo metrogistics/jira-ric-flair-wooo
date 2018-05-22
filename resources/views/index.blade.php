@@ -70,7 +70,9 @@
 
                 <h1>JIRA Tasks Completed Today</h1>
 
-                <counter-component v-model="counter"></counter-component>
+                <h1 id="counter">{{ $count }}</h1>
+
+                <audio id="audio" src="" type="audio/mp3"></audio>
 
             </div>
         </div>
@@ -79,19 +81,3 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
-
-<script>
-
-    new Vue({
-        el: "#root",
-        data: {
-            counter: 0,
-        },
-        methods: {
-            incrementCounter: function () {
-                this.counter += 1;
-            }
-        }
-    })
-
-</script>

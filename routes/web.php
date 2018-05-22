@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+
+    $count = App\Counter::where('id', 1)->first()->count ?? 0;
+
+    return view('index', ['count' => $count]);
 });
