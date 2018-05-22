@@ -40,11 +40,11 @@ class RicFlairController extends Controller
 
                 // pick a Ric Flair clip
 
-                $file_path = $this->getRandomSoundClip();
+                $url = $this->getRandomSoundClip();
 
                 // broadcast the updated count and Ric Flair clip
 
-                event(new JiraNotification($counter->count, $file_path));
+                event(new JiraNotification($counter->count, $url));
 
                 return response()->json(['yell' => 'WOOOOO!']);
             }
@@ -68,8 +68,8 @@ class RicFlairController extends Controller
 
         $selected_file = $files[$selected_index];
 
-        $file_path = public_path('audio-files/' . $selected_file);
+        $url = config('app.url') . '/audio-files/' . $selected_file;
 
-        return $file_path;
+        return $url;
     }
 }
