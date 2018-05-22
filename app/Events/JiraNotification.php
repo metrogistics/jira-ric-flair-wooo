@@ -13,20 +13,20 @@ class JiraNotification implements ShouldBroadcastNow
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $count;
-    public $file_path;
+    public $url;
 
     /**
      * Create a new event instance.
      *
      * @param $count
-     * @param $file_path
+     * @param $url
      *
      * @return void
      */
-    public function __construct($count, $file_path)
+    public function __construct($count, $url)
     {
         $this->count = $count;
-        $this->file_path = $file_path;
+        $this->url = $url;
     }
 
     /**
