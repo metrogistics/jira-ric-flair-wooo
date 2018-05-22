@@ -14,6 +14,7 @@ class Counter extends Migration
     public function up()
     {
         Schema::create('counter', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('count');
         });
     }
