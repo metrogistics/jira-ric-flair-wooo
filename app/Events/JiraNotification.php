@@ -2,9 +2,9 @@
 
 namespace App\Events;
 
+use Illuminate\Broadcasting\Channel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 
@@ -36,6 +36,6 @@ class JiraNotification implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('jira-notifications');
+        return new Channel('jira-notifications');
     }
 }

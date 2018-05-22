@@ -13,7 +13,7 @@ window.Echo = new Echo({
     encrypted: true
 });
 
-window.Echo.private('jira-notifications')
+window.Echo.channel('jira-notifications')
     .listen('JiraNotification', (e) => {
         console.log(e);
     });
