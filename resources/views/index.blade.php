@@ -63,6 +63,11 @@
                 text-transform: uppercase;
             }
 
+            @media (max-width: 768px) {
+                html, body {
+                    font-size: 1rem;
+                }
+            }
         </style>
     </head>
     <body>
